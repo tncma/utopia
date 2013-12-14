@@ -1,0 +1,60 @@
+@CHARSET "US-ASCII";
+
+html,body{
+    font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+    position:relative;
+    height:100%;
+	width:100%;
+}
+
+.container{
+	width:100%;
+}
+
+#appLayer{
+    height:100%;
+    overflow:hidden;
+}
+
+#headerLayer{
+	height:8%;
+	background:#3a43a3;
+}
+
+#bodyLayer{
+	height:95%;
+}
+
+.subcontainer{
+	height:100%;
+}
+
+#map_canvas{
+	width:80%;
+	float:left;
+	
+}
+
+#dashboard{
+	width:20%;
+	float:right;
+}
+
+.dashboardContent{
+	width:100%;
+}
+
+#dashboardHead{
+	height:5%;
+	background:#286fb7;
+}
+
+#dashboardBody{
+	height:95%;
+	background:#8394d3;
+}
+
+.events{
+	
+}
+

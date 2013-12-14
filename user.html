@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Events</title>
+<script language="javascript" type="text/javascript" src="scripts/jquery-1.9.1.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script>
+$(document).ready(function(){
+  $('.events').iCheck({
+    radioClass: 'iradio_square-red',
+    increaseArea: '20%' // optional
+  });
+});
+      function initialize() {
+        var map_canvas = document.getElementById('map_canvas');
+        var map_options = {
+          center: new google.maps.LatLng(13.0839, 80.2700),
+          zoom: 13,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(map_canvas, map_options)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<link type="text/css" href="css/reset.css" rel="stylesheet"/>
+<link type="text/css" href="css/user.css" rel="stylesheet"/>
+
+</head>
+<body>
+
+<div id="appLayer" class="container">
+<div id="headerLayer" class="container">
+
+</div>
+
+<div id="bodyLayer" class="container">
+	<div id="map_canvas" class="subcontainer">
+
+	</div>
+	<div id="dashboard" class="subcontainer">
+		<div id="dashboardHead" class="dashboardContent">
+			<p>Dashboard</p>
+		</div>	
+		<div id="dashboardBody" class="dashboardContent">
+			<div id="event1" class="events"><p>One</p></div>
+			<div id="event1" class="events"><p>Two</p></div>
+			<div id="event1" class="events"><p>Three</p></div>
+			<div id="event1" class="events"><p>Four</p></div>
+			<div id="event1" class="events"><p>Five</p></div>			
+		</div>
+	
+	</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
