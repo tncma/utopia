@@ -7,7 +7,19 @@ if(time()-$_SESSION['time'] >= 300)
 	exit();
 }
 $_SESSION['time']=time();
-$res = mysql_query("select problem.id,event.name,description,latitude,longitude,event.icon from problem,event where event.id = problem.id and problem.event in (select event_id from problem,user,dept_event,dept where user.id=$_SESSION[userid] and user.type = dept.id and dept_event.dept_id=dept.id)");
+if($_SESSION['userid']==1)
+{
+	$res = mysql_query("select problem.id,event.name,description,latitude,longitude,event.icon from problem,event where event.id = problem.id and problem.event in (select event_id from problem,user,dept_event,dept where user.id=$_SESSION[userid] and user.type = dept.id and dept_event.dept_id=dept.id)");
+}
+else if($_SESSION['userid']>1 && $_SESSION['userid']<5)
+{
+	$res = mysql_query("select problem.id,event.name,description,latitude,longitude,event.icon from problem,event where event.id=problem.id");
+}
+else 
+{
+	echo "null";
+	exit();
+}	
 if($_POST['flag'] == 1)
 {
 	$result = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
