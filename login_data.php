@@ -10,7 +10,7 @@ if(mysql_num_rows($val)==1)
 	$_SESSION['userid']=$id;
 	$_SESSION['user']=mysql_fetch_array($val);
 	$_SESSION['time']=time();
-	header("location: ./home.html");
+	header("location: ./user.php");
 }
 else
 {
